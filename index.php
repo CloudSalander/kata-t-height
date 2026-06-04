@@ -6,12 +6,20 @@ $height = intval(readline("Please, enter the T height that you want"));
 $firstLine = "";
 
 $firstLine = str_repeat("T",$height);
+$middle = intdiv($height,2);
+
 if($height%2 == 0) {
-    $middle = intdiv($height,2);
     $firstLine = substr($firstLine, 0, $middle) . " " . substr($firstLine, $middle);
 }
 
 echo $firstLine.PHP_EOL;
 
+$con = 1;
+$otherLinesPattern = str_repeat(" ",$height-1);
+while($con < $height) {
+    $line = substr($otherLinesPattern, 0, $middle) . "T" . substr($otherLinesPattern, $middle);
+    echo $line.PHP_EOL;
+    ++$con;
+}
 
 ?>
