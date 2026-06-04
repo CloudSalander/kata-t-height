@@ -1,7 +1,10 @@
 <?php
 
-//TODO: validate entry
-$height = intval(readline("Please, enter the T height that you want"));
+$height = "";
+while(!is_numeric($height) || $height <= 0) {
+    $height = readline("Please, enter the T height that you want");
+}
+$height = intval($height);
 
 $firstLine = "";
 
